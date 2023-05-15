@@ -28,3 +28,38 @@ public:
         return head;
     }
 };
+
+class Solution2 {
+public:
+    ListNode* getKth(ListNode* head , int k){
+        ListNode* temp = head;
+        while(--k) temp = temp->next;
+        return temp;
+    }
+    
+    ListNode* getKthFromEnd(ListNode* head , int k){
+        ListNode* temp = head;
+        int sz=0;
+        while(temp!=NULL){
+            temp = temp->next;
+            sz++;
+        }
+        temp = head;
+        int kth = sz - k + 1;
+        while(--kth) temp = temp->next;
+        
+        return temp;
+    }
+    ListNode* swapNodes(ListNode* head, int k) {
+        ListNode* start = getKth(head , k );
+        ListNode* end = getKthFromEnd(head , k);
+        
+        int val = start->val;
+        start->val = end->val;
+        end->val = val;
+        
+        return head;
+        
+        
+    }
+};
