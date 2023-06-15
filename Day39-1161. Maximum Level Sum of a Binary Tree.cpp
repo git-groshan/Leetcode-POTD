@@ -4,7 +4,7 @@ using namespace std;
 //Problem link 
 //https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
 
-
+// simply return the level with max sum 
  // Definition for a binary tree node.
   struct TreeNode {
       int val;
